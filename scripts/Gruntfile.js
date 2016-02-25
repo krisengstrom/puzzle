@@ -5,13 +5,24 @@ module.exports = function(grunt) {
 		sass: {
 			dist: {
 				options: {
-					style: 'compressed'
+					style: 'compressed',
+					compass: true
 				},
 				files: {
 					"../www/css/style.min.css": "../www/css/sass/style.scss"
 				}
 			}
 		},
+
+		// compass: {
+		// 	dist: {
+		// 		options: {
+		// 			sassDir: '../www/css/sass',
+		// 			cssDir: '../www/css/sass',
+		// 			outputStyle: 'compressed'
+		// 		}
+		// 	}
+		// },
 
 		ngAnnotate: {
 			options: {
@@ -54,7 +65,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.loadNpmTasks('grunt-ng-annotate');
-	//grunt.loadNpmTasks('grunt-contrib-compass');
+	grunt.loadNpmTasks('grunt-contrib-compass');
 
 	grunt.registerTask('default', ['watch']);
 };
